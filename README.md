@@ -154,6 +154,8 @@ The `model` field corresponds to one of the following ASR systems:
 - `granite`*
 
 Models marked with an asterisk (*) are outside the scope of related paper, as they were trained on the Earnings22 dataset.
+
+
 ---
 
 ## Annotation Methodology
