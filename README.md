@@ -1,167 +1,3 @@
----
-language:
-- en
-
-license: unknown
-
-task_categories:
-- automatic-speech-recognition
-- audio-classification
-- text-classification
-
-annotations_creators:
-- expert-generated
-
-source_datasets:
-- earnings22
-
-multilinguality:
-- monolingual
-
-size_categories:
-- 1K<n<10K
-
-pretty_name: "HALAS: A Human-Annotated Dataset of Hallucinations of Modern ASR Systems"
-
-tags:
-- asr
-- speech-recognition
-- speech-processing
-- hallucination
-- hallucination-detection
-- whisper
-- earnings22
-- benchmark
-- human-annotations
-- error-detection
-- audio
-- speech-to-text
-- robustness
-
-dataset_info:
-  - config_name: default
-    features:
-  - name: audio_id
-    dtype: string
-
-  - name: audio_duration
-    dtype: float32
-
-  - name: e22_reference_text
-    dtype: string
-
-  - name: corrected_reference_text
-    dtype: string
-
-  - name: whisper_large_v2_prediction
-    dtype: string
-  - name: whisper_large_v2_label
-    dtype: bool
-  - name: whisper_large_v2_hallucination_text
-    dtype: string
-  - name: whisper_large_v2_hallucination_json
-    dtype: string
-
-  - name: whisper_large_v3_prediction
-    dtype: string
-  - name: whisper_large_v3_label
-    dtype: bool
-  - name: whisper_large_v3_hallucination_text
-    dtype: string
-  - name: whisper_large_v3_hallucination_json
-    dtype: string
-
-  - name: whisper_large_v3_turbo_prediction
-    dtype: string
-  - name: whisper_large_v3_turbo_label
-    dtype: bool
-  - name: whisper_large_v3_turbo_hallucination_text
-    dtype: string
-  - name: whisper_large_v3_turbo_hallucination_json
-    dtype: string
-
-  - name: crisper_whisper_prediction
-    dtype: string
-  - name: crisper_whisper_label
-    dtype: bool
-  - name: crisper_whisper_hallucination_text
-    dtype: string
-  - name: crisper_whisper_hallucination_json
-    dtype: string
-
-  - name: canary_prediction
-    dtype: string
-  - name: canary_label
-    dtype: bool
-  - name: canary_hallucination_text
-    dtype: string
-  - name: canary_hallucination_json
-    dtype: string
-
-  - name: canary_flash_prediction
-    dtype: string
-  - name: canary_flash_label
-    dtype: bool
-  - name: canary_flash_hallucination_text
-    dtype: string
-  - name: canary_flash_hallucination_json
-    dtype: string
-
-  - name: parakeet_prediction
-    dtype: string
-  - name: parakeet_label
-    dtype: bool
-  - name: parakeet_hallucination_text
-    dtype: string
-  - name: parakeet_hallucination_json
-    dtype: string
-
-  - name: phi4_prediction
-    dtype: string
-  - name: phi4_label
-    dtype: bool
-  - name: phi4_hallucination_text
-    dtype: string
-  - name: phi4_hallucination_json
-    dtype: string
-
-  - name: granite_prediction
-    dtype: string
-  - name: granite_label
-    dtype: bool
-  - name: granite_hallucination_text
-    dtype: string
-  - name: granite_hallucination_json
-    dtype: string
-
-  - name: split
-    dtype: string
-
-    splits:
-      - name: train
-        num_examples: 2866
-
-      - name: test
-        num_examples: 745
-
-configs:
-  - config_name: default
-    data_files:
-      - split: train
-        path: train-*
-      - split: test
-        path: test-*
-
-paperswithcode_id: null
-
-train_eval_index:
-- config: default
-  task: hallucination-detection
-  split: test
-
----
-# Dataset Card for HALAS
-
 ## Dataset Summary
 
 **HALAS (Hallucination Annotations for Large-scale ASR Systems)** is a human-annotated dataset of hallucinations produced by modern automatic speech recognition (ASR) systems on real-world speech recordings. The dataset contains span-level hallucination annotations for ASR outputs generated from recordings in the Earnings22 corpus.
@@ -274,9 +110,10 @@ HALAS contains original human annotations produced by the authors. Unless otherw
 
 ## Dataset Sources
 
-### Repository
+### Hugging Face
 
-**TODO:** Add the public GitHub repository URL.
+https://huggingface.co/datasets/MatBar99/HALAS
+
 
 ### Paper
 
@@ -393,7 +230,7 @@ Candidate segments were selected from portions exhibiting high disagreement betw
 
 Audio files can be downloaded using following script:
 
-```
+```python
 import csv
 from datasets import load_dataset
 import soundfile as sf
