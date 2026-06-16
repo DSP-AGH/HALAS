@@ -150,9 +150,10 @@ The `model` field corresponds to one of the following ASR systems:
 - `canary`
 - `canary_flash`
 - `parakeet`
-- `phi4`
-- `granite`
+- `phi4`*
+- `granite`*
 
+Models marked with an asterisk (*) are outside the scope of related paper, as they were trained on the Earnings22 dataset.
 ---
 
 ## Annotation Methodology
