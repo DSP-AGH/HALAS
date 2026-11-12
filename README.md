@@ -18,7 +18,7 @@ HALAS is intended as a benchmark for:
 
 ## Dataset Details
 
-The dataset contains **3,611 audio files** from the Earnings22 dataset with manually verified and corrected annotations.
+The dataset contains **3,607 audio files** from the Earnings22 dataset with manually verified and corrected annotations.
 
 For each audio segment, predictions from multiple state-of-the-art ASR models were collected and independently reviewed by human annotators. Hallucinated spans, looping errors, and hallucination-looping errors were labeled at the text-span level.
 
@@ -193,8 +193,8 @@ Additionally, all reference transcripts were revalidated and corrected by the ar
 
 | Split | Files |
 |---------|---------|
-| Train | 2,866 |
-| Test | 745 |
+| Train | 2,863 |
+| Test | 783 |
 
 The train/test partition was created by:
 
