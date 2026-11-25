@@ -1,0 +1,12 @@
+model,test_wer_corrected_pct,test_wer_e22_pct,test_ins_rate_pct,test_loops,test_ins_bursts,all_audible_wer_corrected_pct,all_audible_loops,all_audible_ins_bursts,inaudible_nonempty_pct,inaudible_empty_count,human_hallucination_rate_test_pct,human_hallucination_rate_all_pct
+oruk_fourier_2b,25.43,41.42,8.38,0,0,28.97,2,1,94.7,27,,
+qwen3_asr_1_7b,25.81,40.02,6.96,3,0,29.39,5,1,96.07,20,,
+whisper_large_v3,26.45,48.28,7.36,0,0,31.36,1,3,85.46,74,15.46,23.76
+whisper_large_v3_turbo,31.4,50.72,8.6,2,1,37.85,4,4,99.21,4,19.76,29.36
+parakeet,33.76,47.84,7.46,0,0,40.53,3,1,67.98,163,18.01,33.68
+crisper_whisper,34.36,53.18,16.07,3,3,38.87,9,7,92.53,38,13.71,21.35
+canary,35.79,53.35,13.08,3,3,45.54,13,14,91.16,45,23.25,33.57
+granite,40.17,42.43,14.34,5,3,42.53,13,8,93.91,31,20.56,27.75
+canary_flash,70.11,85.12,33.55,12,10,110.85,64,63,63.26,187,22.18,30.44
+whisper_large_v2,73.27,86.11,23.52,4,9,83.62,14,40,79.37,105,42.88,43.75
+phi4,81.77,85.19,48.68,9,6,114.82,28,25,97.05,15,22.04,30.36

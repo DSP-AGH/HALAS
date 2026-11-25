@@ -1,0 +1,690 @@
+{
+  "benchmark": "DSP-AGH/HALAS",
+  "completed_at_utc": "2026-11-25T22:30:03.277607+00:00",
+  "gpu": "NVIDIA H200",
+  "python": "3.12.3",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.24.0.dev0",
+  "normalizer": "whisper_normalizer.english.EnglishTextNormalizer",
+  "fourier_2b_verification": {
+    "model_id": "oruk/oruk-fourier-2b",
+    "revision": "8c2a8871f1304aa2f634da4fb95e24438c4945b9",
+    "files_verified": [
+      "chat_template.jinja",
+      "config.json",
+      "generation_config.json",
+      "model.safetensors",
+      "processor_config.json",
+      "tokenizer.json",
+      "tokenizer_config.json"
+    ],
+    "weight_bytes": 4076193080,
+    "weight_sha256": "e64765ffdd90c83704c0951e0d88b7f2ed84499af5c208f7ddf8d922cf08441c",
+    "tokenizer_sha256": "bd2a97b55c8f7f9c328c73ee9b9178771037e9f566dfca8e238a063d41cbac92"
+  },
+  "runtime": {
+    "oruk_fourier_2b": {
+      "segments": 3607,
+      "total_audio_seconds": 10244.9,
+      "decode_seconds": 130.084,
+      "rtfx": 78.76,
+      "oom_fallbacks": 0,
+      "errors": 0
+    },
+    "qwen3_asr_1_7b": {
+      "segments": 3607,
+      "total_audio_seconds": 10244.9,
+      "decode_seconds": 45.648,
+      "rtfx": 224.43,
+      "oom_fallbacks": 0,
+      "errors": 0
+    }
+  },
+  "models": {
+    "oruk_fourier_2b": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 25.43,
+        "insertion_rate_percent": 8.38,
+        "substitutions": 761,
+        "deletions": 391,
+        "insertions": 566,
+        "ref_words": 6757,
+        "empty_predictions": 0,
+        "ngram_loop_segments": 0,
+        "insertion_burst_segments": 0
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 41.42,
+        "insertion_rate_percent": 16.61,
+        "substitutions": 898,
+        "deletions": 731,
+        "insertions": 1090,
+        "ref_words": 6564,
+        "empty_predictions": 0,
+        "ngram_loop_segments": 0,
+        "insertion_burst_segments": 1
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 31.42,
+        "insertion_rate_percent": 11.8,
+        "substitutions": 1260,
+        "deletions": 660,
+        "insertions": 1155,
+        "ref_words": 9786,
+        "empty_predictions": 3,
+        "ngram_loop_segments": 2,
+        "insertion_burst_segments": 1
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 28.97,
+        "insertion_rate_percent": 10.4,
+        "substitutions": 2021,
+        "deletions": 1051,
+        "insertions": 1721,
+        "ref_words": 16543,
+        "empty_predictions": 3,
+        "ngram_loop_segments": 2,
+        "insertion_burst_segments": 1
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 27,
+        "nonempty_hallucinated": 482,
+        "nonempty_rate_percent": 94.7,
+        "mean_hallucinated_words_when_nonempty": 2.38
+      }
+    },
+    "qwen3_asr_1_7b": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 25.81,
+        "insertion_rate_percent": 6.96,
+        "substitutions": 742,
+        "deletions": 532,
+        "insertions": 470,
+        "ref_words": 6757,
+        "empty_predictions": 0,
+        "ngram_loop_segments": 3,
+        "insertion_burst_segments": 0
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 40.02,
+        "insertion_rate_percent": 14.32,
+        "substitutions": 869,
+        "deletions": 818,
+        "insertions": 940,
+        "ref_words": 6564,
+        "empty_predictions": 0,
+        "ngram_loop_segments": 3,
+        "insertion_burst_segments": 1
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 31.86,
+        "insertion_rate_percent": 10.48,
+        "substitutions": 1272,
+        "deletions": 820,
+        "insertions": 1026,
+        "ref_words": 9786,
+        "empty_predictions": 1,
+        "ngram_loop_segments": 2,
+        "insertion_burst_segments": 1
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 29.39,
+        "insertion_rate_percent": 9.04,
+        "substitutions": 2014,
+        "deletions": 1352,
+        "insertions": 1496,
+        "ref_words": 16543,
+        "empty_predictions": 1,
+        "ngram_loop_segments": 5,
+        "insertion_burst_segments": 1
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 20,
+        "nonempty_hallucinated": 489,
+        "nonempty_rate_percent": 96.07,
+        "mean_hallucinated_words_when_nonempty": 2.26
+      }
+    },
+    "whisper_large_v2": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 73.27,
+        "insertion_rate_percent": 23.52,
+        "substitutions": 1095,
+        "deletions": 2267,
+        "insertions": 1589,
+        "ref_words": 6757,
+        "empty_predictions": 49,
+        "ngram_loop_segments": 4,
+        "insertion_burst_segments": 9
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 86.11,
+        "insertion_rate_percent": 29.3,
+        "substitutions": 1312,
+        "deletions": 2417,
+        "insertions": 1923,
+        "ref_words": 6564,
+        "empty_predictions": 49,
+        "ngram_loop_segments": 4,
+        "insertion_burst_segments": 10
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 90.77,
+        "insertion_rate_percent": 45.8,
+        "substitutions": 1628,
+        "deletions": 2773,
+        "insertions": 4482,
+        "ref_words": 9786,
+        "empty_predictions": 193,
+        "ngram_loop_segments": 10,
+        "insertion_burst_segments": 31
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 83.62,
+        "insertion_rate_percent": 36.7,
+        "substitutions": 2723,
+        "deletions": 5040,
+        "insertions": 6071,
+        "ref_words": 16543,
+        "empty_predictions": 242,
+        "ngram_loop_segments": 14,
+        "insertion_burst_segments": 40
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 105,
+        "nonempty_hallucinated": 404,
+        "nonempty_rate_percent": 79.37,
+        "mean_hallucinated_words_when_nonempty": 3.5
+      },
+      "human_hallucination_rate_test_percent": 42.88,
+      "human_hallucination_rate_all_percent": 43.75
+    },
+    "whisper_large_v3": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 26.45,
+        "insertion_rate_percent": 7.36,
+        "substitutions": 570,
+        "deletions": 720,
+        "insertions": 497,
+        "ref_words": 6757,
+        "empty_predictions": 16,
+        "ngram_loop_segments": 0,
+        "insertion_burst_segments": 0
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 48.28,
+        "insertion_rate_percent": 16.03,
+        "substitutions": 1025,
+        "deletions": 1092,
+        "insertions": 1052,
+        "ref_words": 6564,
+        "empty_predictions": 16,
+        "ngram_loop_segments": 0,
+        "insertion_burst_segments": 2
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 34.75,
+        "insertion_rate_percent": 13.25,
+        "substitutions": 993,
+        "deletions": 1111,
+        "insertions": 1297,
+        "ref_words": 9786,
+        "empty_predictions": 52,
+        "ngram_loop_segments": 1,
+        "insertion_burst_segments": 3
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 31.36,
+        "insertion_rate_percent": 10.84,
+        "substitutions": 1563,
+        "deletions": 1831,
+        "insertions": 1794,
+        "ref_words": 16543,
+        "empty_predictions": 68,
+        "ngram_loop_segments": 1,
+        "insertion_burst_segments": 3
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 74,
+        "nonempty_hallucinated": 435,
+        "nonempty_rate_percent": 85.46,
+        "mean_hallucinated_words_when_nonempty": 2.75
+      },
+      "human_hallucination_rate_test_percent": 15.46,
+      "human_hallucination_rate_all_percent": 23.76
+    },
+    "whisper_large_v3_turbo": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 31.4,
+        "insertion_rate_percent": 8.6,
+        "substitutions": 809,
+        "deletions": 732,
+        "insertions": 581,
+        "ref_words": 6757,
+        "empty_predictions": 0,
+        "ngram_loop_segments": 2,
+        "insertion_burst_segments": 1
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 50.72,
+        "insertion_rate_percent": 17.5,
+        "substitutions": 1063,
+        "deletions": 1117,
+        "insertions": 1149,
+        "ref_words": 6564,
+        "empty_predictions": 0,
+        "ngram_loop_segments": 2,
+        "insertion_burst_segments": 2
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 42.31,
+        "insertion_rate_percent": 18.18,
+        "substitutions": 1376,
+        "deletions": 985,
+        "insertions": 1779,
+        "ref_words": 9786,
+        "empty_predictions": 1,
+        "ngram_loop_segments": 2,
+        "insertion_burst_segments": 3
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 37.85,
+        "insertion_rate_percent": 14.27,
+        "substitutions": 2185,
+        "deletions": 1717,
+        "insertions": 2360,
+        "ref_words": 16543,
+        "empty_predictions": 1,
+        "ngram_loop_segments": 4,
+        "insertion_burst_segments": 4
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 4,
+        "nonempty_hallucinated": 505,
+        "nonempty_rate_percent": 99.21,
+        "mean_hallucinated_words_when_nonempty": 2.82
+      },
+      "human_hallucination_rate_test_percent": 19.76,
+      "human_hallucination_rate_all_percent": 29.36
+    },
+    "crisper_whisper": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 34.36,
+        "insertion_rate_percent": 16.07,
+        "substitutions": 762,
+        "deletions": 474,
+        "insertions": 1086,
+        "ref_words": 6757,
+        "empty_predictions": 4,
+        "ngram_loop_segments": 3,
+        "insertion_burst_segments": 3
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 53.18,
+        "insertion_rate_percent": 25.17,
+        "substitutions": 984,
+        "deletions": 855,
+        "insertions": 1652,
+        "ref_words": 6564,
+        "empty_predictions": 4,
+        "ngram_loop_segments": 3,
+        "insertion_burst_segments": 4
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 41.99,
+        "insertion_rate_percent": 20.27,
+        "substitutions": 1271,
+        "deletions": 854,
+        "insertions": 1984,
+        "ref_words": 9786,
+        "empty_predictions": 19,
+        "ngram_loop_segments": 6,
+        "insertion_burst_segments": 4
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 38.87,
+        "insertion_rate_percent": 18.56,
+        "substitutions": 2033,
+        "deletions": 1328,
+        "insertions": 3070,
+        "ref_words": 16543,
+        "empty_predictions": 23,
+        "ngram_loop_segments": 9,
+        "insertion_burst_segments": 7
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 38,
+        "nonempty_hallucinated": 471,
+        "nonempty_rate_percent": 92.53,
+        "mean_hallucinated_words_when_nonempty": 3.64
+      },
+      "human_hallucination_rate_test_percent": 13.71,
+      "human_hallucination_rate_all_percent": 21.35
+    },
+    "canary": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 35.79,
+        "insertion_rate_percent": 13.08,
+        "substitutions": 1026,
+        "deletions": 508,
+        "insertions": 884,
+        "ref_words": 6757,
+        "empty_predictions": 0,
+        "ngram_loop_segments": 3,
+        "insertion_burst_segments": 3
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 53.35,
+        "insertion_rate_percent": 21.77,
+        "substitutions": 1203,
+        "deletions": 870,
+        "insertions": 1429,
+        "ref_words": 6564,
+        "empty_predictions": 0,
+        "ngram_loop_segments": 3,
+        "insertion_burst_segments": 5
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 52.27,
+        "insertion_rate_percent": 23.2,
+        "substitutions": 1897,
+        "deletions": 948,
+        "insertions": 2270,
+        "ref_words": 9786,
+        "empty_predictions": 34,
+        "ngram_loop_segments": 10,
+        "insertion_burst_segments": 11
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 45.54,
+        "insertion_rate_percent": 19.07,
+        "substitutions": 2923,
+        "deletions": 1456,
+        "insertions": 3154,
+        "ref_words": 16543,
+        "empty_predictions": 34,
+        "ngram_loop_segments": 13,
+        "insertion_burst_segments": 14
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 45,
+        "nonempty_hallucinated": 464,
+        "nonempty_rate_percent": 91.16,
+        "mean_hallucinated_words_when_nonempty": 3.66
+      },
+      "human_hallucination_rate_test_percent": 23.25,
+      "human_hallucination_rate_all_percent": 33.57
+    },
+    "canary_flash": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 70.11,
+        "insertion_rate_percent": 33.55,
+        "substitutions": 823,
+        "deletions": 1647,
+        "insertions": 2267,
+        "ref_words": 6757,
+        "empty_predictions": 122,
+        "ngram_loop_segments": 12,
+        "insertion_burst_segments": 10
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 85.12,
+        "insertion_rate_percent": 41.03,
+        "substitutions": 1005,
+        "deletions": 1889,
+        "insertions": 2693,
+        "ref_words": 6564,
+        "empty_predictions": 122,
+        "ngram_loop_segments": 12,
+        "insertion_burst_segments": 11
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 138.98,
+        "insertion_rate_percent": 100.55,
+        "substitutions": 1754,
+        "deletions": 2007,
+        "insertions": 9840,
+        "ref_words": 9786,
+        "empty_predictions": 315,
+        "ngram_loop_segments": 52,
+        "insertion_burst_segments": 53
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 110.85,
+        "insertion_rate_percent": 73.19,
+        "substitutions": 2577,
+        "deletions": 3654,
+        "insertions": 12107,
+        "ref_words": 16543,
+        "empty_predictions": 437,
+        "ngram_loop_segments": 64,
+        "insertion_burst_segments": 63
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 187,
+        "nonempty_hallucinated": 322,
+        "nonempty_rate_percent": 63.26,
+        "mean_hallucinated_words_when_nonempty": 11.05
+      },
+      "human_hallucination_rate_test_percent": 22.18,
+      "human_hallucination_rate_all_percent": 30.44
+    },
+    "parakeet": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 33.76,
+        "insertion_rate_percent": 7.46,
+        "substitutions": 805,
+        "deletions": 972,
+        "insertions": 504,
+        "ref_words": 6757,
+        "empty_predictions": 38,
+        "ngram_loop_segments": 0,
+        "insertion_burst_segments": 0
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 47.84,
+        "insertion_rate_percent": 13.82,
+        "substitutions": 1041,
+        "deletions": 1192,
+        "insertions": 907,
+        "ref_words": 6564,
+        "empty_predictions": 38,
+        "ngram_loop_segments": 0,
+        "insertion_burst_segments": 1
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 45.21,
+        "insertion_rate_percent": 7.87,
+        "substitutions": 1495,
+        "deletions": 2159,
+        "insertions": 770,
+        "ref_words": 9786,
+        "empty_predictions": 196,
+        "ngram_loop_segments": 3,
+        "insertion_burst_segments": 1
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 40.53,
+        "insertion_rate_percent": 7.7,
+        "substitutions": 2300,
+        "deletions": 3131,
+        "insertions": 1274,
+        "ref_words": 16543,
+        "empty_predictions": 234,
+        "ngram_loop_segments": 3,
+        "insertion_burst_segments": 1
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 163,
+        "nonempty_hallucinated": 346,
+        "nonempty_rate_percent": 67.98,
+        "mean_hallucinated_words_when_nonempty": 2.19
+      },
+      "human_hallucination_rate_test_percent": 18.01,
+      "human_hallucination_rate_all_percent": 33.68
+    },
+    "phi4": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 81.77,
+        "insertion_rate_percent": 48.68,
+        "substitutions": 957,
+        "deletions": 1279,
+        "insertions": 3289,
+        "ref_words": 6757,
+        "empty_predictions": 1,
+        "ngram_loop_segments": 9,
+        "insertion_burst_segments": 6
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 85.19,
+        "insertion_rate_percent": 51.19,
+        "substitutions": 1066,
+        "deletions": 1166,
+        "insertions": 3360,
+        "ref_words": 6564,
+        "empty_predictions": 1,
+        "ngram_loop_segments": 9,
+        "insertion_burst_segments": 6
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 137.64,
+        "insertion_rate_percent": 100.9,
+        "substitutions": 1862,
+        "deletions": 1733,
+        "insertions": 9874,
+        "ref_words": 9786,
+        "empty_predictions": 15,
+        "ngram_loop_segments": 19,
+        "insertion_burst_segments": 19
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 114.82,
+        "insertion_rate_percent": 79.57,
+        "substitutions": 2819,
+        "deletions": 3012,
+        "insertions": 13163,
+        "ref_words": 16543,
+        "empty_predictions": 16,
+        "ngram_loop_segments": 28,
+        "insertion_burst_segments": 25
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 15,
+        "nonempty_hallucinated": 494,
+        "nonempty_rate_percent": 97.05,
+        "mean_hallucinated_words_when_nonempty": 4.62
+      },
+      "human_hallucination_rate_test_percent": 22.04,
+      "human_hallucination_rate_all_percent": 30.36
+    },
+    "granite": {
+      "test_corrected_ref": {
+        "n_scored": 744,
+        "wer_percent": 40.17,
+        "insertion_rate_percent": 14.34,
+        "substitutions": 838,
+        "deletions": 907,
+        "insertions": 969,
+        "ref_words": 6757,
+        "empty_predictions": 1,
+        "ngram_loop_segments": 5,
+        "insertion_burst_segments": 3
+      },
+      "test_e22_ref": {
+        "n_scored": 742,
+        "wer_percent": 42.43,
+        "insertion_rate_percent": 15.63,
+        "substitutions": 978,
+        "deletions": 781,
+        "insertions": 1026,
+        "ref_words": 6564,
+        "empty_predictions": 1,
+        "ngram_loop_segments": 5,
+        "insertion_burst_segments": 4
+      },
+      "train_audible_corrected_ref": {
+        "n_scored": 2334,
+        "wer_percent": 44.15,
+        "insertion_rate_percent": 15.4,
+        "substitutions": 1465,
+        "deletions": 1349,
+        "insertions": 1507,
+        "ref_words": 9786,
+        "empty_predictions": 10,
+        "ngram_loop_segments": 8,
+        "insertion_burst_segments": 5
+      },
+      "all_audible_corrected_ref": {
+        "n_scored": 3078,
+        "wer_percent": 42.53,
+        "insertion_rate_percent": 14.97,
+        "substitutions": 2303,
+        "deletions": 2256,
+        "insertions": 2476,
+        "ref_words": 16543,
+        "empty_predictions": 11,
+        "ngram_loop_segments": 13,
+        "insertion_burst_segments": 8
+      },
+      "inaudible_segments": {
+        "total": 509,
+        "empty_silent": 31,
+        "nonempty_hallucinated": 478,
+        "nonempty_rate_percent": 93.91,
+        "mean_hallucinated_words_when_nonempty": 3.11
+      },
+      "human_hallucination_rate_test_percent": 20.56,
+      "human_hallucination_rate_all_percent": 27.75
+    }
+  }
+}
